@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #00A693;
+    --secondary-color: #F2F9F8;
+    --accent-color: #F4A460;
+    --text-main: #333333;
+    --text-light: #666666;
+    --background: #FFFFFF;
+    --font-main: 'Noto Sans JP', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-main);
+    line-height: 1.8;
+    background-color: var(--background);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+section {
+    padding: 2rem 1rem;
+    margin-bottom: 1rem;
+}
+
+section:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+/* Header */
+header {
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    text-align: center;
+    padding: 0;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    padding: 2rem 1rem;
+    background: var(--secondary-color);
+}
+
+.hero-text h1 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+}
+
+/* Components */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--accent-color);
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.1s ease;
+    margin: 1rem 0;
+}
+
+.btn:active {
+    transform: translateY(2px);
+}
+
+/* Mobile Specifics (Design.yaml) */
+/* Images full width on mobile */
+@media (max-width: 768px) {
+    .full-width-mobile {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0; /* Corner radius 0px as requested */
+    }
+    
+    section {
+        padding: 2rem 0; /* Edge to edge for sections */
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    /* Allow images inside container to break out if needed, 
+       but for now we keep them contained or use specific classes */
+}
+
+/* Specific Section Styles */
+.message-section img {
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.blockquote {
+    font-style: italic;
+    color: var(--text-light);
+    border-left: 4px solid var(--accent-color);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+}
+
+ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+/* Navigation - Simple Overlay for now */
+.nav-menu {
+    display: none; /* Hidden by default on mobile */
+}

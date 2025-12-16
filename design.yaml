@@ -1,0 +1,34 @@
+site_config:
+  name: "VARY Academy Manual"
+  target_audience: "Mothers raising children with developmental concerns"
+  tone: "Empathetic, Welcoming, Clear, Professional but Warm"
+  language: "Japanese"
+
+design_system:
+  colors:
+    primary: "#00A693" # VARY Green
+    secondary: "#F2F9F8" # Background light green
+    accent: "#F4A460" # Orange for buttons
+    text_main: "#333333"
+    text_light: "#666666"
+    background: "#FFFFFF"
+  
+  typography:
+    font_family_jp: "'Noto Sans JP', sans-serif"
+    headings: "Bold, rounded feeling"
+    body: "Easy to read, generous line spacing"
+
+  components:
+    button:
+      style: "Rounded pill shape"
+      shadow: "Soft drop shadow"
+    cards:
+      style: "White background, rounded corners, soft shadow"
+    navigation:
+      style: "Mobile-first hamburger menu"
+    
+    # ▼▼▼ 今回追加・修正した部分 ▼▼▼
+    images:
+      layout: "Full width (100% width of the mobile screen)" # 画面幅いっぱい
+      style: "Edge-to-edge, no side padding" # 余白なしでドンと配置
+      corner_radius: "0px" # 端まで見せるため角丸にしない（好みで調整可）
