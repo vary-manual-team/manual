@@ -36,13 +36,23 @@
             <div class="logo">
                 <img src="images/logo_vary.png" alt="VARY Academy Logo">
             </div>
-            <div class="menu-icon">
+            <div class="menu-icon" onclick="toggleMenu()" style="cursor: pointer; position: relative;">
                 <!-- Hamburger Icon Placeholder -->
                 <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 12H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M3 6H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     <path d="M3 18H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
+                <!-- Dropdown Menu -->
+                <nav id="nav-menu" style="display: none; position: absolute; top: 100%; right: 0; width: max-content; min-width: 160px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; z-index: 1000; margin-top: 10px;">
+                    <ul style="list-style: none; margin: 0; padding: 0;">
+                        <li>
+                            <a href="guide.html" style="display: block; padding: 12px 20px; text-decoration: none; color: #333; font-size: 0.95rem; text-align: left;">
+                                📖 マニュアルを見る
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </header>
 
@@ -195,6 +205,27 @@
                 input.value = ""; // Clear input
             }
         }
+
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const menu = document.getElementById('nav-menu');
+            const icon = document.querySelector('.menu-icon');
+            // Only close if menu is open, and click is NOT on the icon
+            // (Clicking icon is handled by toggleMenu)
+            if (menu.style.display === 'block' && !icon.contains(event.target)) {
+                menu.style.display = 'none';
+            }
+        });
     </script>
 </body>
 
