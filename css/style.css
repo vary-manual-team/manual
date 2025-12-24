@@ -30,7 +30,9 @@ img {
 }
 
 /* Typography */
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     font-weight: 700;
     line-height: 1.4;
     color: var(--primary-color);
@@ -58,7 +60,7 @@ section:nth-child(even) {
 header {
     background-color: #fff;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -103,7 +105,7 @@ header {
     background: #fff;
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     margin-bottom: 1.5rem;
 }
 
@@ -165,14 +167,15 @@ header {
 }
 
 .btn-secondary {
-    background-color: #f0f0f0;
-    color: #555;
-    border: 1px solid #ddd;
+    background-color: #d9d9d9;
+    color: #333;
+    border: 1px solid #bbb;
     box-shadow: none;
 }
+
 .btn-secondary:hover {
-    background-color: #e0e0e0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background-color: #bfbfbf;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 /* Mobile Specifics (Design.yaml) */
@@ -182,17 +185,19 @@ header {
         width: 100%;
         margin-left: 0;
         margin-right: 0;
-        border-radius: 0; /* Corner radius 0px as requested */
+        border-radius: 0;
+        /* Corner radius 0px as requested */
     }
-    
+
     section {
-        padding: 2rem 0; /* Edge to edge for sections */
+        padding: 2rem 0;
+        /* Edge to edge for sections */
     }
-    
+
     .container {
         padding: 0 1rem;
     }
-    
+
     /* Allow images inside container to break out if needed, 
        but for now we keep them contained or use specific classes */
 }
@@ -230,5 +235,6 @@ footer {
 
 /* Navigation - Simple Overlay for now */
 .nav-menu {
-    display: none; /* Hidden by default on mobile */
+    display: none;
+    /* Hidden by default on mobile */
 }
