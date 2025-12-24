@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARY Academy Manual - Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="VARY Academy 会員向けマニュアル - 操作ガイド">
+    <style>
+        .manual-section {
+            padding: 2rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .manual-section h2 {
+            border-bottom: none;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .manual-section h3 {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .step-box {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            background: #fff;
+            padding: 0.5rem;
+            border: 1px dashed #ccc;
+            margin-top: 0.5rem;
+        }
+
+        .toc {
+            background: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 0.5rem;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Button specific overrides for manual to match request */
+        .btn-link-block {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Login Overlay -->
+    <div id="login-overlay"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f2f9f8; z-index: 9999; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <div
+            style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; max-width: 90%; width: 300px;">
+            <h2 style="margin-bottom: 1rem; color: #00A693; font-size: 1.5rem;">パスワードを入力</h2>
+            <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">会員専用ページです</p>
+            <input type="password" id="password-input" placeholder="パスワード"
+                style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; margin-bottom: 1rem; box-sizing: border-box;">
+            <button onclick="checkPassword()"
+                style="background: #F4A460; color: white; border: none; padding: 12px; border-radius: 50px; font-weight: bold; width: 100%; cursor: pointer;">ログイン</button>
+            <p id="error-msg"
+                style="color: #d32f2f; margin-top: 10px; display: none; font-size: 0.85rem; font-weight: bold;">
+                パスワードが間違っています</p>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper (Hidden by default) -->
+    <div id="main-content" style="display: none;">
+
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo_vary.png" alt="VARY Academy Logo">
+                </a>
+            </div>
+            <div class="menu-icon">
+                <a href="index.html" style="text-decoration: none; font-size: 1.5rem; color: #333;">🏠</a>
+            </div>
+        </header>
+
+        <div class="container">
+
+            <section class="hero"
+                style="background: var(--primary-color); color: white; padding: 2rem 1rem; border-radius: 0 0 20px 20px; margin-bottom: 2rem;">
+                <h1 style="color: white; font-size: 1.8rem; border: none;">VARY Academy<br>会員マニュアル</h1>
+                <p>入会後のステップから、コミュニティの活用方法までを解説します。</p>
+            </section>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>目次</h3>
+                <ul>
+                    <li><a href="index.html">0. 代表メッセージ</a></li>
+                    <li><a href="#sec1">1. VARYとは？</a></li>
+                    <li><a href="#sec2">2. 入会後のステップ (アプリ設定)</a></li>
+                    <li><a href="#sec3">3. 入会特典</a></li>
+                    <li><a href="#sec4">4. エリア紹介</a></li>
+                    <li><a href="#sec5">5. 定例ライブについて</a></li>
+                    <li><a href="#sec6">6. Zoom会・イベント</a></li>
+                    <li><a href="#sec7">7. 掲示板の使い方</a></li>
+                    <li><a href="#sec8">8. 個別コンサルティング</a></li>
+                    <li><a href="#sec9">9. よくある質問 (FAQ)</a></li>
+                </ul>
+            </div>
+
+            <!-- 1. VARYとは -->
+            <section id="sec1" class="manual-section">
+                <h2>1. VARYとは？</h2>
+                <h3>「自分らしく、共に創る」場所へようこそ</h3>
+                <p>VARYへ入会いただきありがとうございます。ここは、あなたの可能性を広げ、同じ志を持つ仲間と出会うためのコミュニティです。</p>
+                <div style="margin-top: 1rem; text-align: center;">
+                    <img src="images/profile_yumi.jpg" alt="西村 佑美" class="full-width-mobile"
+                        style="max-width: 300px; margin: 0 auto;">
+                </div>
+            </section>
+
+            <!-- 2. 入会後のステップ -->
+            <section id="sec2" class="manual-section">
+                <h2>2. 入会後のステップ</h2>
+                <p>スムーズに参加いただくために、以下の設定をお願いします。</p>
+
+                <div class="step-box">
+                    <h3>① 専用アプリ「Kajabi」のダウンロード</h3>
+                    <p>iOS / Androidストアから「KAJABI」を検索、または以下のボタンからインストールしてください。</p>
+
+                    <a href="https://apps.apple.com/us/app/kajabi/id1485646310" class="btn btn-store"
+                        target="_blank">Kajabiアプリ
+                        (iPhone)</a>
+                    <a href="https://play.google.com/store/apps/details?id=kajabi.kajabiapp&hl=en_US"
+                        class="btn btn-store" target="_blank">Kajabiアプリ (Android)</a>
+                </div>
+
+                <div class="step-box">
+                    <h3>② 使い方の確認</h3>
+                    <p>ログイン手順やアプリの使い方は、以下の動画をご参照ください。</p>
+                    <a href="https://youtu.be/hKd9AoIJhRk?si=bA0Jc6QTgtBj61Po" class="btn btn-youtube"
+                        target="_blank">Kajabi使い方動画 (YouTube)</a>
+                </div>
+
+                <div class="step-box">
+                    <h3>③ プロフィールの設定</h3>
+                    <p>ニックネームとアイコンを設定してください。</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>④ 会員限定Instagramのフォロー</h3>
+                    <p>VARY会員限定の非公開インスタがあります。「vary_mamatomo_doctor」のアカウントにDMとフォロー申請を送ってください。</p>
+                </div>
+            </section>
+
+            <!-- 3. 入会特典 -->
+            <section id="sec3" class="manual-section">
+                <h2>3. 入会特典</h2>
+                <ul>
+                    <li><strong>特典（PDF冊子）の受け取り:</strong> PC版サイトのTOP→会員メニューからダウンロード。※アプリからは不可。</li>
+                    <li><strong>グループコンサル優先枠:</strong> 入会後3ヶ月間は優先参加可能。</li>
+                    <li><strong>Zoomオリエンテーション:</strong> コミュニティの使い方をご案内。</li>
+                    <li><strong>VARYオリジナルDiary:</strong> 入会後の3ヶ月を支える日記をプレゼント。</li>
+                </ul>
+                <img src="images/image_bonus_covers.jpg" alt="Bonus Covers" class="full-width-mobile"
+                    style="margin-top: 1rem;">
+            </section>
+
+            <!-- 4. エリア紹介 -->
+            <section id="sec4" class="manual-section">
+                <h2>4. VARYでできること</h2>
+                <p>VARYには主に3つのエリア「学ぶ」「知る」「繋がる」があります。</p>
+                <img src="images/vary_overview_diagram.png" alt="Overview Diagram" class="full-width-mobile"
+                    style="margin: 1rem 0;">
+
+                <h3>【学ぶ】コンテンツエリア</h3>
+                <p>過去のアーカイブ動画や教材が全て閲覧できます。</p>
+                <img src="images/guide_learning_area.png" alt="Learning Area" class="full-width-mobile">
+                <ul>
+                    <li>
+                        <strong>「最初にまなぶ子育て講座（５０のレッスンで本を解説）」</strong><br>
+                        子ども発達相談アカデミーVARY入会したらかならず受講していただきく、最初のレッスンコースになります。<br>
+                        「発達特性に悩んだらはじめに読む本」を5分ずつ解説していく動画になります。５０レッスンです。<br>
+                        一緒に頑張って読み進めましょう！
+                    </li>
+                    <li>「定例ライブ相談アーカイブ」もこちらからご視聴できます。</li>
+                </ul>
+
+                <h3>【知る】お知らせエリア</h3>
+                <p>運営からの重要なお知らせや、イベントの告知はコミュニティサイトに集約されます。</p>
+                <div class="note">Kajabiアプリの「Community」→左上のハンバーガーメニューからアクセス。</div>
+                <img src="images/guide_humburger_menu.png" alt="Hamburger Menu" class="full-width-mobile"
+                    style="margin-top: 0.5rem;">
+
+                <h3>【繋がる】交流エリア</h3>
+                <p>「自己紹介」スレッドには、ぜひ最初の一言を書き込んでみてください。</p>
+                <p><strong>コミュニティサイトから自己紹介掲示板を選んでください。</strong><br>
+                    What's new? をタップして自己紹介を入力し、Postしてください。<br>
+                    本名に抵抗のある方はひらがな表記のフルネームか下の名前でお願いします。</p>
+                <img src="images/guide_self_intro.png" alt="Self Intro" class="full-width-mobile">
+            </section>
+
+            <!-- 5. 定例ライブ -->
+            <section id="sec5" class="manual-section">
+                <h2>5. 定例ライブについて</h2>
+                <p>基本的に週に1回、佑美先生によるライブ配信を行っています。<br>
+                    アーカイブはKajabiの「定例ライブ相談アーカイブ」から視聴できます。</p>
+                <div class="step-box">
+                    <p><strong>参加方法:</strong></p>
+                    <ol>
+                        <li>Kajabiアプリから参加する (Live ON AIR をタップ)</li>
+                        <li>開始時のメールから参加する</li>
+                        <li>以下のボタンから直接参加する</li>
+                    </ol>
+                    <a href="https://vary.cdpsa-japan.net/products/6/courses/live_rooms/709066" class="btn btn-primary"
+                        target="_blank">定例ライブ会場へ</a>
+                </div>
+
+                <h3>事前質問について</h3>
+                <p>質問はライブ開催の3日前から専用スレッドで受け付けます。<br>
+                    質問は専用スレッドのコメント欄に記載してください。</p>
+                <img src="images/guide_live_question_post.png" alt="Question Post" class="full-width-mobile">
+            </section>
+
+            <!-- 6. Zoom会 -->
+            <section id="sec6" class="manual-section">
+                <h2>6. Zoom会・イベント</h2>
+                <p>定例ライブ以外（おしゃべり会、勉強会など）はすべてZoomで行います。</p>
+                <p>基本共通リンクとなります。<br>
+                    <span style="font-size: 0.9rem;">※はるな先生の会とオリエンテーションは別発行となりますので、開催が近づいてきたら、掲示板等でお知らせ致します。</span>
+                </p>
+
+                <a href="https://us06web.zoom.us/j/9603718108?omn=87288136199" class="btn btn-zoom" target="_blank">Zoom
+                    (イベント共通)</a>
+
+                <div style="display: flex; gap: 10px; overflow-x: auto; margin-top: 1rem;">
+                    <img src="images/event_oshaberi.png" alt="Oshaberi" style="width: 200px; flex-shrink: 0;">
+                    <img src="images/event_orientation.png" alt="Orientation" style="width: 200px; flex-shrink: 0;">
+                    <img src="images/event_group_consultation.png" alt="Group Consult"
+                        style="width: 200px; flex-shrink: 0;">
+                </div>
+
+                <h3 style="margin-top: 2rem;">LINEオープンチャット</h3>
+                <p>緊急連絡やメンバー間の交流用です。</p>
+                <a href="https://line.me/ti/g2/hQ026cJYpkWOX8F1yzI8k1IgYzvURjJQrJdYWQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+                    class="btn btn-line" target="_blank">LINEオープンチャットに参加</a>
+            </section>
+
+            <!-- 7. 掲示板 -->
+            <section id="sec7" class="manual-section">
+                <h2>7. 掲示板（コミュニティサイト）</h2>
+                <p>日報や成果報告、悩み相談など、目的に合わせたスレッド（部屋）が用意されています。</p>
+                <p>定例ライブ質問と議事録も表示されます。</p>
+                <img src="images/guide_community_board.png" alt="Community Board" class="full-width-mobile">
+                <p style="text-align: right;">質問は専用スレッドのコメント欄に記載してください。</p>
+            </section>
+
+            <!-- 8. 個別コンサル -->
+            <section id="sec8" class="manual-section">
+                <h2>8. 個別コンサルティング</h2>
+
+                <p><strong>個別コンサルティングは確実に各御家庭に合わせたお子さんの成長につなげていけます。</strong></p>
+                <p>個別コンサル後にLINEによるフォローが可能です。<br>
+                    お子さんの発達や子育ての悩みなら、どんなに細かいことでもご相談承ります。<br>
+                    特性に応じた幼稚園・小学校受験へのアドバイスも行っております。<br>
+                    お子さんの診断の有無は問いません。<br>
+                    最重度の自閉症と診断されている場合でも、必ず諦めずに伸ばす方法をお伝えします。</p>
+                <p>対象年齢：原則0歳から10歳ころまで<span style="font-size: 0.9rem;">※ 高学年以降の方は、一度ご相談ください、中学生まで対応いたします。</span></p>
+                <img src="images/consulting_header.jpg" alt="Consulting" class="full-width-mobile"
+                    style="margin-bottom: 1rem;">
+
+                <a href="https://vary.cdpsa-japan.net/library" class="btn btn-accent" target="_blank">個別コンサル申し込み</a>
+            </section>
+
+            <!-- 9. FAQ -->
+            <section id="sec9" class="manual-section">
+                <h2>9. よくある質問 (FAQ)</h2>
+
+                <div class="step-box">
+                    <h3>Q. パスワードを忘れました</h3>
+                    <p>ログイン画面で "Forgot password?" をタップし、メールアドレスを入力して再設定してください。</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>Q. クレジットカードを変更したい</h3>
+                    <p>以下のマニュアルを確認し、設定から変更してください。</p>
+                    <a href="https://drive.google.com/file/d/1SPCcGH8HSliysdJqqozuMbDotlM3FZ80/view?usp=drivesdk"
+                        class="btn btn-secondary" target="_blank">クレジット変更手順マニュアルを見る</a>
+                </div>
+
+                <div class="step-box">
+                    <h3>Q. 退会したい</h3>
+                    <p>公式LINEにご連絡ください。休会や退会について説明させていただきます。</p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>VARY Academy</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem;">一般社団法人 日本小児発達子育て支援協会</p>
+
+            <div style="margin-top: 1.5rem;">
+                <p>お問い合わせはこちら</p>
+                <a href="https://line.me/R/ti/p/@551xbhkk?oat_content=url&ts=01171459" class="btn btn-line"
+                    target="_blank">西村佑美事務局 公式LINE</a>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="index.html" style="color: white; text-decoration: underline;">トップへ戻る</a>
+            </div>
+        </footer>
+
+    </div>
+    <!-- End Main Content Wrapper -->
+
+    <script>
+        const CORRECT_PASSWORD = "VARY"; // Password
+        const LOGIN_KEY = "vary_auth";   // SessionStorage Key
+
+        // Check authentication on load
+        document.addEventListener("DOMContentLoaded", function () {
+            if (sessionStorage.getItem(LOGIN_KEY) === 'true') {
+                showContent();
+            }
+
+            // Allow Enter key to submit
+            const input = document.getElementById('password-input');
+            if (input) {
+                input.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        checkPassword();
+                    }
+                });
+            }
+        });
+
+        function showContent() {
+            const overlay = document.getElementById('login-overlay');
+            const main = document.getElementById('main-content');
+            if (overlay) overlay.style.display = 'none';
+            if (main) main.style.display = 'block';
+        }
+
+        function checkPassword() {
+            const input = document.getElementById('password-input');
+            const errorMsg = document.getElementById('error-msg');
+
+            if (input.value === CORRECT_PASSWORD) {
+                sessionStorage.setItem(LOGIN_KEY, 'true');
+                showContent();
+            } else {
+                errorMsg.style.display = 'block';
+                input.value = ""; // Clear input
+            }
+        }
+    </script>
+</body>
+
+</html>
