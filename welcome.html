@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VARY Academy Manual - Welcome</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="VARY Academy 会員向けマニュアルサイト - トップページ">
+</head>
+
+<body>
+
+    <!-- Login Overlay -->
+    <div id="login-overlay"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f2f9f8; z-index: 9999; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <div
+            style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; max-width: 90%; width: 300px;">
+            <h2 style="margin-bottom: 1rem; color: #00A693; font-size: 1.5rem;">パスワードを入力</h2>
+            <p style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">会員専用ページです</p>
+            <input type="password" id="password-input" placeholder="パスワード"
+                style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; margin-bottom: 1rem; box-sizing: border-box;">
+            <button onclick="checkPassword()"
+                style="background: #F4A460; color: white; border: none; padding: 12px; border-radius: 50px; font-weight: bold; width: 100%; cursor: pointer;">ログイン</button>
+            <p id="error-msg"
+                style="color: #d32f2f; margin-top: 10px; display: none; font-size: 0.85rem; font-weight: bold;">
+                パスワードが間違っています</p>
+        </div>
+    </div>
+
+    <!-- Main Content Wrapper (Hidden by default) -->
+    <div id="main-content" style="display: none;">
+
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="images/logo_vary.png" alt="VARY Academy Logo">
+            </div>
+            <div class="menu-icon" onclick="toggleMenu()" style="cursor: pointer; position: relative;">
+                <!-- Hamburger Icon Placeholder -->
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3 6H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3 18H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <!-- Dropdown Menu -->
+                <nav id="nav-menu"
+                    style="display: none; position: absolute; top: 100%; right: 0; width: max-content; min-width: 160px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; z-index: 1000; margin-top: 10px;">
+                    <ul style="list-style: none; margin: 0; padding: 0;">
+                        <li>
+                            <a href="index.html"
+                                style="display: block; padding: 12px 20px; text-decoration: none; color: #333; font-size: 0.95rem; text-align: left;">
+                                📖 マニュアルを見る
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <div class="hero">
+            <img src="images/hero_image.jpg" alt="VARY Academy Hero" class="full-width-mobile">
+            <div class="hero-text">
+                <h1>佑美先生からのメッセージ & プロフィール</h1>
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <section class="message-section">
+            <div class="container">
+                <h2>Message</h2>
+                <h3>「思い描いた子育てとは少し違ったけど、あの日々も今も愛おしい」へ</h3>
+
+                <div class="blockquote">
+                    「私の子育ては、こんなはずじゃなかった」と悲観するママを一人でも減らし、「手はかかっても、私はこの子が大好き」と思っているママを増やす活動を続けています。
+                </div>
+
+                <img src="images/profile_yumi.jpg" alt="西村 佑美" class="full-width-mobile" style="border-radius: 0;">
+
+                <p>発達特性のある子育ては、発想力も行動力も群を抜いた人づくり。その特性を知り、関わり方を学ぶことで、わが子への愛おしさを高め、夢や希望を持った子育てを実現してほしい。</p>
+                <br>
+                <p>だから、「子ども発達相談アカデミーVARY」という場と、その運営母体である「日本小児発達子育て支援協会」を沢山の人に届けていきます。</p>
+                <br>
+                <p>今が頼るタイミングだと思えたら、ぜひ。ちょっとの勇気だけで大丈夫、待っていますね！</p>
+
+                <p style="text-align: right; margin-top: 1rem; font-weight: bold;">西村 佑美</p>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="philosophy-section">
+            <div class="container">
+                <h2>Philosophy</h2>
+                <h3>「普通か普通じゃないか」という価値観を超えて</h3>
+
+                <p>私が立ち上げた「日本小児発達子育て支援協会（CDPSAJAPAN）」が目指すのは、発達特性を個性として肯定的に捉えられる社会です。</p>
+                <br>
+                <p>医師という枠を超え、ひとりの母親として、同じ悩みを持つ親子に寄り添いたいという想いから「ママ友ドクター®」として活動し続けて5年が過ぎました。</p>
+                <br>
+                <p>発達特性を持つ子どもたちは、AI時代やダイバーシティが重視される現代において、むしろ可能性に満ちた存在。その無限の潜在力を引き出していけるよう、まずママやパパの日々の子育ての悩みを解消していきます。
+                </p>
+            </div>
+        </section>
+
+        <!-- Support Section -->
+        <section class="support-section">
+            <div class="container">
+                <h2>Support</h2>
+                <h3>こんな方々をサポートしています</h3>
+                <ul>
+                    <li>子どもの発達に不安を感じている方</li>
+                    <li>「発達障害」という言葉に戸惑っている方</li>
+                    <li>子どもとの関わり方に悩んでいる方</li>
+                    <li>子育ての中で自分を見失いそうな方</li>
+                    <li>「普通」の枠にとらわれない子育てを模索している方</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="container">
+                <h2>Profile</h2>
+                <div class="card">
+                    <h3 style="margin-bottom: 0.5rem;">西村佑美（にしむら・ゆみ）</h3>
+                    <ul
+                        style="list-style: none; padding: 0; color: var(--primary-color); font-weight: bold; margin-bottom: 1rem;">
+                        <li>発達専門小児科医</li>
+                        <li>一般社団法人 日本小児発達子育て支援協会 代表理事</li>
+                    </ul>
+                    <p>宮城県仙台市出身。日本大学医学部卒。小児科専門医。子どものこころ専門医。</p>
+                    <p>発達特性を持つ長男を含む三児の母。最重度自閉症のきょうだい児として育ち、障害児家族に寄り添う医師を志す。</p>
+                    <p>これまでのべ1万組以上の親子を診察。当事者家族としての経験を活かし、発達専門外来を新設した後、2020年より「ママ友ドクター®」プロジェクトを始動。</p>
+                </div>
+
+                <h3>Activity</h3>
+                <ul>
+                    <li><strong>2022年:</strong> 「子ども発達相談アカデミーVARY」を立ち上げ。</li>
+                    <li><strong>2024年:</strong> 「発達特性に悩んだらはじめに読む本（Gakken）」を出版。</li>
+                    <li><strong>同2024年:</strong> 一般社団法人日本小児発達子育て支援協会を立ち上げ。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Organization Section -->
+        <section class="organization-section">
+            <div class="container">
+                <h2>Organization</h2>
+                <h3>子ども発達相談アカデミーVARY</h3>
+                <p>発達の特性がある子どもたちと家族のためのオンラインコミュニティ。個別相談、グループコンサルティング、専門家監修の認定講座提供などを通じて、日々の子育ての不安を解消します。</p>
+                <br>
+                <p>全国33都道府県以上8か国から延べ200人以上が参加し、現在も約120名が在籍しています。小児科医が主催する子育てコミュニティとしては日本最大級です。</p>
+
+                <br>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 VARY Academy</p>
+            <br>
+            <a href="index.html" class="btn" style="background-color: white; color: var(--primary-color);">マニュアルを見る</a>
+        </footer>
+
+    </div>
+    <!-- End Main Content Wrapper -->
+
+    <script>
+        const CORRECT_PASSWORD = "VARY"; // Password
+        const LOGIN_KEY = "vary_auth";   // SessionStorage Key
+
+        // Check authentication on load
+        document.addEventListener("DOMContentLoaded", function () {
+            if (sessionStorage.getItem(LOGIN_KEY) === 'true') {
+                showContent();
+            }
+
+            // Allow Enter key to submit
+            const input = document.getElementById('password-input');
+            if (input) {
+                input.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        checkPassword();
+                    }
+                });
+            }
+        });
+
+        function showContent() {
+            const overlay = document.getElementById('login-overlay');
+            const main = document.getElementById('main-content');
+            if (overlay) overlay.style.display = 'none';
+            if (main) main.style.display = 'block';
+        }
+
+        function checkPassword() {
+            const input = document.getElementById('password-input');
+            const errorMsg = document.getElementById('error-msg');
+
+            if (input.value === CORRECT_PASSWORD) {
+                sessionStorage.setItem(LOGIN_KEY, 'true');
+                showContent();
+            } else {
+                errorMsg.style.display = 'block';
+                input.value = ""; // Clear input
+            }
+        }
+
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function (event) {
+            const menu = document.getElementById('nav-menu');
+            const icon = document.querySelector('.menu-icon');
+            // Only close if menu is open, and click is NOT on the icon
+            // (Clicking icon is handled by toggleMenu)
+            if (menu.style.display === 'block' && !icon.contains(event.target)) {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

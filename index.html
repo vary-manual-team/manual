@@ -4,9 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VARY Academy Manual - Welcome</title>
+    <title>VARY Academy Manual - Guide</title>
     <link rel="stylesheet" href="css/style.css">
-    <meta name="description" content="VARY Academy 会員向けマニュアルサイト - トップページ">
+    <meta name="description" content="VARY Academy 会員向けマニュアル - 操作ガイド">
+    <style>
+        .manual-section {
+            padding: 2rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .manual-section h2 {
+            border-bottom: none;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .manual-section h3 {
+            font-size: 1.2rem;
+            color: var(--text-main);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .step-box {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            background: #fff;
+            padding: 0.5rem;
+            border: 1px dashed #ccc;
+            margin-top: 0.5rem;
+        }
+
+        .toc {
+            background: var(--secondary-color);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 0.5rem;
+        }
+
+        .toc a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            display: block;
+        }
+
+        /* Button specific overrides for manual to match request */
+        .btn-link-block {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,134 +103,242 @@
         <!-- Header -->
         <header>
             <div class="logo">
-                <img src="images/logo_vary.png" alt="VARY Academy Logo">
+                <a href="welcome.html">
+                    <img src="images/logo_vary.png" alt="VARY Academy Logo">
+                </a>
             </div>
-            <div class="menu-icon" onclick="toggleMenu()" style="cursor: pointer; position: relative;">
-                <!-- Hamburger Icon Placeholder -->
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 12H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M3 6H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M3 18H21" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                <!-- Dropdown Menu -->
-                <nav id="nav-menu"
-                    style="display: none; position: absolute; top: 100%; right: 0; width: max-content; min-width: 160px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; overflow: hidden; z-index: 1000; margin-top: 10px;">
-                    <ul style="list-style: none; margin: 0; padding: 0;">
-                        <li>
-                            <a href="guide.html"
-                                style="display: block; padding: 12px 20px; text-decoration: none; color: #333; font-size: 0.95rem; text-align: left;">
-                                📖 マニュアルを見る
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="menu-icon">
+                <a href="welcome.html" style="text-decoration: none; font-size: 1.5rem; color: #333;">🏠</a>
             </div>
         </header>
 
-        <!-- Hero -->
-        <div class="hero">
-            <img src="images/hero_image.jpg" alt="VARY Academy Hero" class="full-width-mobile">
-            <div class="hero-text">
-                <h1>佑美先生からのメッセージ & プロフィール</h1>
+        <div class="container">
+
+            <section class="hero"
+                style="background: var(--primary-color); color: white; padding: 2rem 1rem; border-radius: 0 0 20px 20px; margin-bottom: 2rem;">
+                <h1 style="color: white; font-size: 1.8rem; border: none;">VARY Academy<br>会員マニュアル</h1>
+                <p>入会後のステップから、コミュニティの活用方法までを解説します。</p>
+            </section>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>目次</h3>
+                <ul>
+                    <li><a href="welcome.html">0. 代表メッセージ</a></li>
+                    <li><a href="#sec1">1. VARYとは？</a></li>
+                    <li><a href="#sec2">2. 入会後のステップ (アプリ設定)</a></li>
+                    <li><a href="#sec3">3. 入会特典</a></li>
+                    <li><a href="#sec4">4. エリア紹介</a></li>
+                    <li><a href="#sec5">5. 定例ライブについて</a></li>
+                    <li><a href="#sec6">6. Zoom会・イベント</a></li>
+                    <li><a href="#sec7">7. 掲示板の使い方</a></li>
+                    <li><a href="#sec8">8. 個別コンサルティング</a></li>
+                    <li><a href="#sec9">9. よくある質問 (FAQ)</a></li>
+                </ul>
             </div>
-        </div>
 
-        <!-- Message Section -->
-        <section class="message-section">
-            <div class="container">
-                <h2>Message</h2>
-                <h3>「思い描いた子育てとは少し違ったけど、あの日々も今も愛おしい」へ</h3>
+            <!-- 1. VARYとは -->
+            <section id="sec1" class="manual-section">
+                <h2>1. VARYとは？</h2>
+                <h3>「自分らしく、共に創る」場所へようこそ</h3>
+                <p>VARYへ入会いただきありがとうございます。ここは、あなたの可能性を広げ、同じ志を持つ仲間と出会うためのコミュニティです。</p>
+                <div style="margin-top: 1rem; text-align: center;">
+                    <img src="images/profile_yumi.jpg" alt="西村 佑美" class="full-width-mobile"
+                        style="max-width: 300px; margin: 0 auto;">
+                </div>
+            </section>
 
-                <div class="blockquote">
-                    「私の子育ては、こんなはずじゃなかった」と悲観するママを一人でも減らし、「手はかかっても、私はこの子が大好き」と思っているママを増やす活動を続けています。
+            <!-- 2. 入会後のステップ -->
+            <section id="sec2" class="manual-section">
+                <h2>2. 入会後のステップ</h2>
+                <p>スムーズに参加いただくために、以下の設定をお願いします。</p>
+
+                <div class="step-box">
+                    <h3>① 専用アプリ「Kajabi」のダウンロード</h3>
+                    <p>iOS / Androidストアから「KAJABI」を検索、または以下のボタンからインストールしてください。</p>
+
+                    <a href="https://apps.apple.com/us/app/kajabi/id1485646310" class="btn btn-store"
+                        target="_blank">Kajabiアプリ
+                        (iPhone)</a>
+                    <a href="https://play.google.com/store/apps/details?id=kajabi.kajabiapp&hl=en_US"
+                        class="btn btn-store" target="_blank">Kajabiアプリ (Android)</a>
                 </div>
 
-                <img src="images/profile_yumi.jpg" alt="西村 佑美" class="full-width-mobile" style="border-radius: 0;">
+                <div class="step-box">
+                    <h3>② 使い方の確認</h3>
+                    <p>ログイン手順やアプリの使い方は、以下の動画をご参照ください。</p>
+                    <a href="https://youtu.be/hKd9AoIJhRk?si=bA0Jc6QTgtBj61Po" class="btn btn-youtube"
+                        target="_blank">Kajabi使い方動画 (YouTube)</a>
+                </div>
 
-                <p>発達特性のある子育ては、発想力も行動力も群を抜いた人づくり。その特性を知り、関わり方を学ぶことで、わが子への愛おしさを高め、夢や希望を持った子育てを実現してほしい。</p>
-                <br>
-                <p>だから、「子ども発達相談アカデミーVARY」という場と、その運営母体である「日本小児発達子育て支援協会」を沢山の人に届けていきます。</p>
-                <br>
-                <p>今が頼るタイミングだと思えたら、ぜひ。ちょっとの勇気だけで大丈夫、待っていますね！</p>
+                <div class="step-box">
+                    <h3>③ プロフィールの設定</h3>
+                    <p>ニックネームとアイコンを設定してください。</p>
+                </div>
 
-                <p style="text-align: right; margin-top: 1rem; font-weight: bold;">西村 佑美</p>
-            </div>
-        </section>
+                <div class="step-box">
+                    <h3>④ 会員限定Instagramのフォロー</h3>
+                    <p>VARY会員限定の非公開インスタがあります。「vary_mamatomo_doctor」のアカウントにDMとフォロー申請を送ってください。</p>
+                </div>
+            </section>
 
-        <!-- Philosophy Section -->
-        <section class="philosophy-section">
-            <div class="container">
-                <h2>Philosophy</h2>
-                <h3>「普通か普通じゃないか」という価値観を超えて</h3>
+            <!-- 3. 入会特典 -->
+            <section id="sec3" class="manual-section">
+                <h2>3. 入会特典</h2>
+                <ul>
+                    <li><strong>特典（PDF冊子）の受け取り:</strong> PC版サイトのTOP→会員メニューからダウンロード。※アプリからは不可。</li>
+                    <li><strong>グループコンサル優先枠:</strong> 入会後3ヶ月間は優先参加可能。</li>
+                    <li><strong>Zoomオリエンテーション:</strong> コミュニティの使い方をご案内。</li>
+                    <li><strong>VARYオリジナルDiary:</strong> 入会後の3ヶ月を支える日記をプレゼント。</li>
+                </ul>
+                <img src="images/image_bonus_covers.jpg" alt="Bonus Covers" class="full-width-mobile"
+                    style="margin-top: 1rem;">
+            </section>
 
-                <p>私が立ち上げた「日本小児発達子育て支援協会（CDPSAJAPAN）」が目指すのは、発達特性を個性として肯定的に捉えられる社会です。</p>
-                <br>
-                <p>医師という枠を超え、ひとりの母親として、同じ悩みを持つ親子に寄り添いたいという想いから「ママ友ドクター®」として活動し続けて5年が過ぎました。</p>
-                <br>
-                <p>発達特性を持つ子どもたちは、AI時代やダイバーシティが重視される現代において、むしろ可能性に満ちた存在。その無限の潜在力を引き出していけるよう、まずママやパパの日々の子育ての悩みを解消していきます。
+            <!-- 4. エリア紹介 -->
+            <section id="sec4" class="manual-section">
+                <h2>4. VARYでできること</h2>
+                <p>VARYには主に3つのエリア「学ぶ」「知る」「繋がる」があります。</p>
+                <img src="images/vary_overview_diagram.png" alt="Overview Diagram" class="full-width-mobile"
+                    style="margin: 1rem 0;">
+
+                <h3>【学ぶ】コンテンツエリア</h3>
+                <p>過去のアーカイブ動画や教材が全て閲覧できます。</p>
+                <img src="images/guide_learning_area.png" alt="Learning Area" class="full-width-mobile">
+                <ul>
+                    <li>
+                        <strong>「最初にまなぶ子育て講座（５０のレッスンで本を解説）」</strong><br>
+                        子ども発達相談アカデミーVARY入会したらかならず受講していただきく、最初のレッスンコースになります。<br>
+                        「発達特性に悩んだらはじめに読む本」を5分ずつ解説していく動画になります。５０レッスンです。<br>
+                        一緒に頑張って読み進めましょう！
+                    </li>
+                    <li>「定例ライブ相談アーカイブ」もこちらからご視聴できます。</li>
+                </ul>
+
+                <h3>【知る】お知らせエリア</h3>
+                <p>運営からの重要なお知らせや、イベントの告知はコミュニティサイトに集約されます。</p>
+                <div class="note">Kajabiアプリの「Community」→左上のハンバーガーメニューからアクセス。</div>
+                <img src="images/guide_humburger_menu.png" alt="Hamburger Menu" class="full-width-mobile"
+                    style="margin-top: 0.5rem;">
+
+                <h3>【繋がる】交流エリア</h3>
+                <p>「自己紹介」スレッドには、ぜひ最初の一言を書き込んでみてください。</p>
+                <p><strong>コミュニティサイトから自己紹介掲示板を選んでください。</strong><br>
+                    What's new? をタップして自己紹介を入力し、Postしてください。<br>
+                    本名に抵抗のある方はひらがな表記のフルネームか下の名前でお願いします。</p>
+                <img src="images/guide_self_intro.png" alt="Self Intro" class="full-width-mobile">
+            </section>
+
+            <!-- 5. 定例ライブ -->
+            <section id="sec5" class="manual-section">
+                <h2>5. 定例ライブについて</h2>
+                <p>基本的に週に1回、佑美先生によるライブ配信を行っています。<br>
+                    アーカイブはKajabiの「定例ライブ相談アーカイブ」から視聴できます。</p>
+                <div class="step-box">
+                    <p><strong>参加方法:</strong></p>
+                    <ol>
+                        <li>Kajabiアプリから参加する (Live ON AIR をタップ)</li>
+                        <li>開始時のメールから参加する</li>
+                        <li>以下のボタンから直接参加する</li>
+                    </ol>
+                    <a href="https://vary.cdpsa-japan.net/products/6/courses/live_rooms/709066" class="btn btn-primary"
+                        target="_blank">定例ライブ会場へ</a>
+                </div>
+
+                <h3>事前質問について</h3>
+                <p>質問はライブ開催の3日前から専用スレッドで受け付けます。<br>
+                    質問は専用スレッドのコメント欄に記載してください。</p>
+                <img src="images/guide_live_question_post.png" alt="Question Post" class="full-width-mobile">
+            </section>
+
+            <!-- 6. Zoom会 -->
+            <section id="sec6" class="manual-section">
+                <h2>6. Zoom会・イベント</h2>
+                <p>定例ライブ以外（おしゃべり会、勉強会など）はすべてZoomで行います。</p>
+                <p>基本共通リンクとなります。<br>
+                    <span style="font-size: 0.9rem;">※はるな先生の会とオリエンテーションは別発行となりますので、開催が近づいてきたら、掲示板等でお知らせ致します。</span>
                 </p>
-            </div>
-        </section>
 
-        <!-- Support Section -->
-        <section class="support-section">
-            <div class="container">
-                <h2>Support</h2>
-                <h3>こんな方々をサポートしています</h3>
-                <ul>
-                    <li>子どもの発達に不安を感じている方</li>
-                    <li>「発達障害」という言葉に戸惑っている方</li>
-                    <li>子どもとの関わり方に悩んでいる方</li>
-                    <li>子育ての中で自分を見失いそうな方</li>
-                    <li>「普通」の枠にとらわれない子育てを模索している方</li>
-                </ul>
-            </div>
-        </section>
+                <a href="https://us06web.zoom.us/j/9603718108?omn=87288136199" class="btn btn-zoom" target="_blank">Zoom
+                    (イベント共通)</a>
 
-        <!-- Profile Section -->
-        <section class="profile-section">
-            <div class="container">
-                <h2>Profile</h2>
-                <div class="card">
-                    <h3 style="margin-bottom: 0.5rem;">西村佑美（にしむら・ゆみ）</h3>
-                    <ul
-                        style="list-style: none; padding: 0; color: var(--primary-color); font-weight: bold; margin-bottom: 1rem;">
-                        <li>発達専門小児科医</li>
-                        <li>一般社団法人 日本小児発達子育て支援協会 代表理事</li>
-                    </ul>
-                    <p>宮城県仙台市出身。日本大学医学部卒。小児科専門医。子どものこころ専門医。</p>
-                    <p>発達特性を持つ長男を含む三児の母。最重度自閉症のきょうだい児として育ち、障害児家族に寄り添う医師を志す。</p>
-                    <p>これまでのべ1万組以上の親子を診察。当事者家族としての経験を活かし、発達専門外来を新設した後、2020年より「ママ友ドクター®」プロジェクトを始動。</p>
+                <div style="display: flex; gap: 10px; overflow-x: auto; margin-top: 1rem;">
+                    <img src="images/event_oshaberi.png" alt="Oshaberi" style="width: 200px; flex-shrink: 0;">
+                    <img src="images/event_orientation.png" alt="Orientation" style="width: 200px; flex-shrink: 0;">
+                    <img src="images/event_group_consultation.png" alt="Group Consult"
+                        style="width: 200px; flex-shrink: 0;">
                 </div>
 
-                <h3>Activity</h3>
-                <ul>
-                    <li><strong>2022年:</strong> 「子ども発達相談アカデミーVARY」を立ち上げ。</li>
-                    <li><strong>2024年:</strong> 「発達特性に悩んだらはじめに読む本（Gakken）」を出版。</li>
-                    <li><strong>同2024年:</strong> 一般社団法人日本小児発達子育て支援協会を立ち上げ。</li>
-                </ul>
-            </div>
-        </section>
+                <h3 style="margin-top: 2rem;">LINEオープンチャット</h3>
+                <p>緊急連絡やメンバー間の交流用です。</p>
+                <a href="https://line.me/ti/g2/hQ026cJYpkWOX8F1yzI8k1IgYzvURjJQrJdYWQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+                    class="btn btn-line" target="_blank">LINEオープンチャットに参加</a>
+            </section>
 
-        <!-- Organization Section -->
-        <section class="organization-section">
-            <div class="container">
-                <h2>Organization</h2>
-                <h3>子ども発達相談アカデミーVARY</h3>
-                <p>発達の特性がある子どもたちと家族のためのオンラインコミュニティ。個別相談、グループコンサルティング、専門家監修の認定講座提供などを通じて、日々の子育ての不安を解消します。</p>
-                <br>
-                <p>全国33都道府県以上8か国から延べ200人以上が参加し、現在も約120名が在籍しています。小児科医が主催する子育てコミュニティとしては日本最大級です。</p>
+            <!-- 7. 掲示板 -->
+            <section id="sec7" class="manual-section">
+                <h2>7. 掲示板（コミュニティサイト）</h2>
+                <p>日報や成果報告、悩み相談など、目的に合わせたスレッド（部屋）が用意されています。</p>
+                <p>定例ライブ質問と議事録も表示されます。</p>
+                <img src="images/guide_community_board.png" alt="Community Board" class="full-width-mobile">
+                <p style="text-align: right;">質問は専用スレッドのコメント欄に記載してください。</p>
+            </section>
 
-                <br>
+            <!-- 8. 個別コンサル -->
+            <section id="sec8" class="manual-section">
+                <h2>8. 個別コンサルティング</h2>
 
-            </div>
-        </section>
+                <p><strong>個別コンサルティングは確実に各御家庭に合わせたお子さんの成長につなげていけます。</strong></p>
+                <p>個別コンサル後にLINEによるフォローが可能です。<br>
+                    お子さんの発達や子育ての悩みなら、どんなに細かいことでもご相談承ります。<br>
+                    特性に応じた幼稚園・小学校受験へのアドバイスも行っております。<br>
+                    お子さんの診断の有無は問いません。<br>
+                    最重度の自閉症と診断されている場合でも、必ず諦めずに伸ばす方法をお伝えします。</p>
+                <p>対象年齢：原則0歳から10歳ころまで<span style="font-size: 0.9rem;">※ 高学年以降の方は、一度ご相談ください、中学生まで対応いたします。</span></p>
+                <img src="images/consulting_header.jpg" alt="Consulting" class="full-width-mobile"
+                    style="margin-bottom: 1rem;">
+
+                <a href="https://vary.cdpsa-japan.net/library" class="btn btn-accent" target="_blank">個別コンサル申し込み</a>
+            </section>
+
+            <!-- 9. FAQ -->
+            <section id="sec9" class="manual-section">
+                <h2>9. よくある質問 (FAQ)</h2>
+
+                <div class="step-box">
+                    <h3>Q. パスワードを忘れました</h3>
+                    <p>ログイン画面で "Forgot password?" をタップし、メールアドレスを入力して再設定してください。</p>
+                </div>
+
+                <div class="step-box">
+                    <h3>Q. クレジットカードを変更したい</h3>
+                    <p>以下のマニュアルを確認し、設定から変更してください。</p>
+                    <a href="https://drive.google.com/file/d/1SPCcGH8HSliysdJqqozuMbDotlM3FZ80/view?usp=drivesdk"
+                        class="btn btn-secondary" target="_blank">クレジット変更手順マニュアルを見る</a>
+                </div>
+
+                <div class="step-box">
+                    <h3>Q. 退会したい</h3>
+                    <p>公式LINEにご連絡ください。休会や退会について説明させていただきます。</p>
+                </div>
+            </section>
+
+        </div>
 
         <!-- Footer -->
         <footer>
-            <p>&copy; 2024 VARY Academy</p>
-            <br>
-            <a href="guide.html" class="btn" style="background-color: white; color: var(--primary-color);">マニュアルを見る</a>
+            <p>VARY Academy</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem;">一般社団法人 日本小児発達子育て支援協会</p>
+
+            <div style="margin-top: 1.5rem;">
+                <p>お問い合わせはこちら</p>
+                <a href="https://line.me/R/ti/p/@551xbhkk?oat_content=url&ts=01171459" class="btn btn-line"
+                    target="_blank">西村佑美事務局 公式LINE</a>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <a href="welcome.html" style="color: white; text-decoration: underline;">トップへ戻る</a>
+            </div>
         </footer>
 
     </div>
@@ -207,27 +384,6 @@
                 input.value = ""; // Clear input
             }
         }
-
-        // Hamburger Menu Toggle
-        function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            if (menu.style.display === 'none' || menu.style.display === '') {
-                menu.style.display = 'block';
-            } else {
-                menu.style.display = 'none';
-            }
-        }
-
-        // Close menu when clicking outside
-        document.addEventListener('click', function (event) {
-            const menu = document.getElementById('nav-menu');
-            const icon = document.querySelector('.menu-icon');
-            // Only close if menu is open, and click is NOT on the icon
-            // (Clicking icon is handled by toggleMenu)
-            if (menu.style.display === 'block' && !icon.contains(event.target)) {
-                menu.style.display = 'none';
-            }
-        });
     </script>
 </body>
 
